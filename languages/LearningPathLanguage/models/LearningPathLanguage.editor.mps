@@ -8,6 +8,7 @@
   </languages>
   <imports>
     <import index="dcwe" ref="r:81c1a569-f149-41bf-8e67-9dfdd0922ba5(LearningPathLanguage.structure)" implicit="true" />
+    <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -181,6 +182,49 @@
         </node>
       </node>
       <node concept="l2Vlx" id="4Adqx$adsld" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4Adqx$ae17G">
+    <ref role="1XX52x" to="dcwe:4Adqx$a5ZBv" resolve="Theoretical" />
+    <node concept="3EZMnI" id="4Adqx$ae17I" role="2wV5jI">
+      <node concept="3F0ifn" id="4Adqx$ae17O" role="3EZMnx">
+        <property role="3F0ifm" value="questions:" />
+        <node concept="ljvvj" id="4Adqx$ae17P" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="4Adqx$ae17Q" role="3EZMnx">
+        <ref role="1NtTu8" to="dcwe:4Adqx$a63P8" resolve="questions" />
+        <node concept="lj46D" id="4Adqx$ae17R" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="ljvvj" id="4Adqx$ae17S" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pj6Ft" id="4Adqx$ae17T" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="l2Vlx" id="4Adqx$ae17U" role="2czzBx" />
+      </node>
+      <node concept="l2Vlx" id="4Adqx$ae17K" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4Adqx$ae182">
+    <ref role="1XX52x" to="dcwe:4Adqx$a5ZBz" resolve="Practical" />
+    <node concept="3EZMnI" id="4Adqx$ae184" role="2wV5jI">
+      <node concept="3F0A7n" id="4Adqx$ae18a" role="3EZMnx">
+        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        <node concept="ljvvj" id="4Adqx$ae18b" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="4Adqx$ae186" role="2iSdaV" />
+      <node concept="3F0A7n" id="4Adqx$ae18i" role="3EZMnx">
+        <ref role="1NtTu8" to="dcwe:4Adqx$a63Pf" resolve="performanceType" />
+        <node concept="ljvvj" id="4Adqx$ae18j" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
     </node>
   </node>
 </model>

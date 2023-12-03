@@ -4,13 +4,17 @@ package LearningPathLanguage.structure;
 
 import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptor;
+import jetbrains.mps.smodel.runtime.ConstrainedStringDatatypeDescriptorImpl;
 import java.util.Collection;
 import java.util.Arrays;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
+import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptLearner = createDescriptorForLearner();
@@ -23,6 +27,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSubTopic = createDescriptorForSubTopic();
   /*package*/ final ConceptDescriptor myConceptTheoretical = createDescriptorForTheoretical();
   /*package*/ final ConceptDescriptor myConceptTopic = createDescriptorForTopic();
+  /*package*/ final ConstrainedStringDatatypeDescriptor myCSDatatypeEmail = new ConstrainedStringDatatypeDescriptorImpl(0xb4e5f58b43bb499fL, 0x944fd5c2d76ce052L, 0x498d6a190a3fc1b9L, "Email", "r:81c1a569-f149-41bf-8e67-9dfdd0922ba5(LearningPathLanguage.structure)/5300008992263619001", "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$");
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -69,6 +74,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     }
   }
 
+  @Override
+  public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
+    return Arrays.asList(myCSDatatypeEmail);
+  }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
@@ -83,7 +92,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("id", 0x498d6a190a17f9e9L).type(PrimitiveTypeId.INTEGER).origin("5300008992261011945").done();
     b.property("firstName", 0x498d6a190a17f9ebL).type(PrimitiveTypeId.STRING).origin("5300008992261011947").done();
     b.property("lastName", 0x498d6a190a17f9efL).type(PrimitiveTypeId.STRING).origin("5300008992261011951").done();
-    b.property("email", 0x498d6a190a17f9f3L).type(PrimitiveTypeId.STRING).origin("5300008992261011955").done();
+    b.property("email", 0x498d6a190a17f9f3L).type(MetaIdFactory.dataTypeId(0xb4e5f58b43bb499fL, 0x944fd5c2d76ce052L, 0x498d6a190a3fc1b9L)).origin("5300008992261011955").done();
     b.property("fullName", 0x498d6a190a257c81L).type(PrimitiveTypeId.STRING).origin("5300008992261897345").done();
     b.aggregate("topic", 0x498d6a190a17fa04L).target(0xb4e5f58b43bb499fL, 0x944fd5c2d76ce052L, 0x498d6a190a17f9ceL).optional(true).ordered(true).multiple(false).origin("5300008992261011972").done();
     return b.create();
@@ -108,7 +117,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("id", 0x498d6a190a183d5aL).type(PrimitiveTypeId.INTEGER).origin("5300008992261029210").done();
     b.property("title", 0x498d6a190a183d5cL).type(PrimitiveTypeId.STRING).origin("5300008992261029212").done();
     b.property("description", 0x498d6a190a183d60L).type(PrimitiveTypeId.STRING).origin("5300008992261029216").done();
-    b.aggregate("learningMaterials", 0x498d6a190a183d66L).target(0xb4e5f58b43bb499fL, 0x944fd5c2d76ce052L, 0x498d6a190a17f9d6L).optional(true).ordered(true).multiple(false).origin("5300008992261029222").done();
+    b.aggregate("learningMaterials", 0x498d6a190a183d66L).target(0xb4e5f58b43bb499fL, 0x944fd5c2d76ce052L, 0x498d6a190a17f9d6L).optional(false).ordered(true).multiple(true).origin("5300008992261029222").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForMaterialType() {

@@ -7,14 +7,20 @@
   <imports />
   <registry>
     <language id="b4e5f58b-43bb-499f-944f-d5c2d76ce052" name="LearningPathLanguage">
+      <concept id="5300008992261011935" name="LearningPathLanguage.structure.Theoretical" flags="ng" index="13ADf6">
+        <child id="5300008992261029192" name="questions" index="13_lth" />
+      </concept>
       <concept id="5300008992261011921" name="LearningPathLanguage.structure.SubTopic" flags="ng" index="13ADf8">
         <property id="5300008992261029159" name="title" index="13_lsY" />
         <reference id="5300008992261013053" name="parent" index="13ADg$" />
+        <child id="5300008992261029177" name="assessment" index="13_lsw" />
       </concept>
       <concept id="5300008992261011918" name="LearningPathLanguage.structure.Topic" flags="ng" index="13ADfn">
         <property id="5300008992261011985" name="title" index="13AD08" />
         <child id="5300008992261011996" name="subtopics" index="13AD05" />
       </concept>
+      <concept id="5300008992261011939" name="LearningPathLanguage.structure.Practical" flags="ng" index="13ADfU" />
+      <concept id="5300008992261011942" name="LearningPathLanguage.structure.Question" flags="ng" index="13ADfZ" />
       <concept id="5300008992260990116" name="LearningPathLanguage.structure.Learner" flags="ng" index="13AGUX">
         <property id="5300008992261011955" name="email" index="13ADfE" />
         <property id="5300008992261011947" name="firstName" index="13ADfM" />
@@ -39,14 +45,21 @@
       <node concept="13ADf8" id="4Adqx$abJjY" role="13AD05">
         <property role="13_lsY" value="Learning MPS " />
         <ref role="13ADg$" node="4Adqx$aazC8" resolve="MDE" />
+        <node concept="13ADf6" id="4Adqx$agaPO" role="13_lsw">
+          <node concept="13ADfZ" id="4Adqx$agaPP" role="13_lth" />
+        </node>
       </node>
       <node concept="13ADf8" id="4Adqx$abJk0" role="13AD05">
         <property role="13_lsY" value="Learning EMF" />
         <ref role="13ADg$" node="4Adqx$aazC8" resolve="MDE" />
+        <node concept="13ADf6" id="4Adqx$agaPS" role="13_lsw">
+          <node concept="13ADfZ" id="4Adqx$agaPT" role="13_lth" />
+        </node>
       </node>
       <node concept="13ADf8" id="4Adqx$abJk3" role="13AD05">
         <property role="13_lsY" value="Model Transformation" />
         <ref role="13ADg$" node="4Adqx$aazC8" resolve="MDE" />
+        <node concept="13ADfU" id="4Adqx$agaPW" role="13_lsw" />
       </node>
     </node>
   </node>
